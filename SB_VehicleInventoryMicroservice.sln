@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SB_VehicleInventoryMicroser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SB_Domain", "SB_Domain\SB_Domain.csproj", "{C629BAF2-2086-4C23-9137-4921532D736E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SB_Application", "SB_Application\SB_Application.csproj", "{F37167CB-D15C-412F-A7F4-93341E67AFC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{C629BAF2-2086-4C23-9137-4921532D736E}.Release|x64.Build.0 = Release|Any CPU
 		{C629BAF2-2086-4C23-9137-4921532D736E}.Release|x86.ActiveCfg = Release|Any CPU
 		{C629BAF2-2086-4C23-9137-4921532D736E}.Release|x86.Build.0 = Release|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Debug|x64.Build.0 = Debug|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Debug|x86.Build.0 = Debug|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Release|x64.ActiveCfg = Release|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Release|x64.Build.0 = Release|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{F37167CB-D15C-412F-A7F4-93341E67AFC3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
