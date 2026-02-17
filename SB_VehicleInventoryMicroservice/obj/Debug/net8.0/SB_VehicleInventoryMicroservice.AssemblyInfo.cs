@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SB_VehicleInventoryMicroservice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+467564e949daa3c5c5b4749d8ad5f9d4d353881c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bba5589790346c6942fa4979623d76a7353adaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("SB_VehicleInventoryMicroservice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SB_VehicleInventoryMicroservice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
