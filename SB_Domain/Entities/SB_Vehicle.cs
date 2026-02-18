@@ -6,10 +6,12 @@ namespace SB_Domain.Entities
     public class SB_Vehicle
     {
         public Guid Id { get; private set; }
-        public string VehicleCode { get; private set; }
+        public string VehicleCode { get; private set; } = string.Empty;
         public Guid LocationId { get; private set; }
-        public string VehicleType { get; private set; }
+        public string VehicleType { get; private set; } = string.Empty;
         public SB_VehicleStatus Status { get; private set; }
+
+        private SB_Vehicle() { }
 
         public SB_Vehicle(Guid id, string vehicleCode, Guid locationId, string vehicleType)
         {
