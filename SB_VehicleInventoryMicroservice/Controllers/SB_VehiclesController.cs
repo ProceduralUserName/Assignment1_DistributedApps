@@ -15,5 +15,12 @@ namespace SB_VehicleInventoryMicroservice.Controllers
         {
             _vehicleService = vehicleService;
         }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<SB_VehicleDto>>> GetAll()
+        {
+            var vehicles = await _vehicleService.GetAllVehiclesAsync();
+            return Ok(vehicles);
+        }
     }
 }
