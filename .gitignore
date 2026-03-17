@@ -1,11 +1,3 @@
 .vs/
 **/bin/
 **/obj/
-INSTURCTIONS.md
-CLAUDE.md
-INSTRUCTIONS.md
-SB_VehicleInventoryMicroservice/SB_VehicleInventoryDb.db
-SB_VehicleInventoryMicroservice/SB_VehicleInventoryDb.db-shm
-SB_VehicleInventoryMicroservice/SB_VehicleInventoryDb.db-wal
-FIXES.md
-PLAN.md
