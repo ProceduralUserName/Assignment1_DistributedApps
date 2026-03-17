@@ -64,5 +64,29 @@ namespace SB_Domain.Entities
 
             Status = SB_VehicleStatus.Available;
         }
+
+        public void TransitionTo(SB_VehicleStatus targetStatus)
+        {
+            switch (targetStatus)
+            {
+                case SB_VehicleStatus.Available:
+                    if (Status == SB_VehicleStatus.Reserved)
+                        ReleaseReservation();
+                    else
+                        MarkAvailable();
+                    break;
+                case SB_VehicleStatus.Rented:
+                    MarkRented();
+                    break;
+                case SB_VehicleStatus.Reserved:
+                    MarkReserved();
+                    break;
+                case SB_VehicleStatus.Serviced:
+                    MarkServiced();
+                    break;
+                default:
+                    throw new SB_InvalidVehicleStateException($"Unknown target status: {targetStatus}");
+            }
+        }
     }
 }

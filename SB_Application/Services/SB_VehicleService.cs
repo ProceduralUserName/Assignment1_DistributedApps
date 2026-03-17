@@ -39,25 +39,7 @@ namespace SB_Application.Services
                 ?? throw new KeyNotFoundException($"Vehicle with id {id} not found.");
 
             var status = Enum.Parse<SB_VehicleStatus>(dto.Status, ignoreCase: true);
-
-            switch (status)
-            {
-                case SB_VehicleStatus.Available:
-                    if (vehicle.Status == SB_VehicleStatus.Reserved)
-                        vehicle.ReleaseReservation();
-                    else
-                        vehicle.MarkAvailable();
-                    break;
-                case SB_VehicleStatus.Rented:
-                    vehicle.MarkRented();
-                    break;
-                case SB_VehicleStatus.Reserved:
-                    vehicle.MarkReserved();
-                    break;
-                case SB_VehicleStatus.Serviced:
-                    vehicle.MarkServiced();
-                    break;
-            }
+            vehicle.TransitionTo(status);
 
             await _repository.UpdateAsync(vehicle);
             return MapToDto(vehicle);
