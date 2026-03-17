@@ -2,6 +2,7 @@ using SB_Application.DTOs;
 using SB_Application.Interfaces;
 using SB_Domain.Entities;
 using SB_Domain.Enums;
+using SB_Domain.ValueObjects;
 
 namespace SB_Application.Services
 {
@@ -16,7 +17,7 @@ namespace SB_Application.Services
 
         public async Task<SB_VehicleDto> CreateVehicleAsync(SB_CreateVehicleDto dto)
         {
-            var vehicle = new SB_Vehicle(Guid.NewGuid(), dto.VehicleCode, dto.LocationId, dto.VehicleType);
+            var vehicle = new SB_Vehicle(Guid.NewGuid(), new SB_VehicleCode(dto.VehicleCode), dto.LocationId, new SB_VehicleType(dto.VehicleType));
             await _repository.AddAsync(vehicle);
             return MapToDto(vehicle);
         }
@@ -55,9 +56,9 @@ namespace SB_Application.Services
             return new SB_VehicleDto
             {
                 Id = vehicle.Id,
-                VehicleCode = vehicle.VehicleCode,
+                VehicleCode = vehicle.VehicleCode.Value,
                 LocationId = vehicle.LocationId,
-                VehicleType = vehicle.VehicleType,
+                VehicleType = vehicle.VehicleType.Value,
                 Status = vehicle.Status.ToString()
             };
         }
