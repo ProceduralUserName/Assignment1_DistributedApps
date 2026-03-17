@@ -1,19 +1,20 @@
 using SB_Domain.Enums;
 using SB_Domain.Exceptions;
+using SB_Domain.ValueObjects;
 
 namespace SB_Domain.Entities
 {
     public class SB_Vehicle
     {
         public Guid Id { get; private set; }
-        public string VehicleCode { get; private set; } = string.Empty;
+        public SB_VehicleCode VehicleCode { get; private set; } = null!;
         public Guid LocationId { get; private set; }
-        public string VehicleType { get; private set; } = string.Empty;
+        public SB_VehicleType VehicleType { get; private set; } = null!;
         public SB_VehicleStatus Status { get; private set; }
 
         private SB_Vehicle() { }
 
-        public SB_Vehicle(Guid id, string vehicleCode, Guid locationId, string vehicleType)
+        public SB_Vehicle(Guid id, SB_VehicleCode vehicleCode, Guid locationId, SB_VehicleType vehicleType)
         {
             Id = id;
             VehicleCode = vehicleCode ?? throw new ArgumentNullException(nameof(vehicleCode));
