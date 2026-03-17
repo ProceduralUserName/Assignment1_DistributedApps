@@ -3,6 +3,7 @@ using SB_Application.Interfaces;
 using SB_Application.Services;
 using SB_Infrastructure.Persistence;
 using SB_Infrastructure.Repositories;
+using SB_VehicleInventoryMicroservice.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseMiddleware<SB_GlobalExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

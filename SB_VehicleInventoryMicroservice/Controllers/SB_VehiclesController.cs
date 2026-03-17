@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SB_Application.DTOs;
 using SB_Application.Services;
-using SB_Domain.Exceptions;
 
 namespace SB_VehicleInventoryMicroservice.Controllers
 {
@@ -43,19 +42,8 @@ namespace SB_VehicleInventoryMicroservice.Controllers
         [HttpPut("{id}/status")]
         public async Task<ActionResult<SB_VehicleDto>> UpdateStatus(Guid id, SB_UpdateVehicleStatusDto dto)
         {
-            try
-            {
-                var vehicle = await _vehicleService.UpdateVehicleStatusAsync(id, dto);
-                return Ok(vehicle);
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (SB_InvalidVehicleStateException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var vehicle = await _vehicleService.UpdateVehicleStatusAsync(id, dto);
+            return Ok(vehicle);
         }
 
         [HttpDelete("{id}")]
